@@ -28,4 +28,4 @@ for (let i = 0; i < bigNum; i++) {
 d.getElementById("boot").appendChild("\n\n\nHELLO WORLD \n\n\n");
 
 console.log(d.getElementById("boot"));
-console.log(render(html));
+console.log(render(new Element("drape").isSelfClosing()));

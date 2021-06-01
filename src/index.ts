@@ -3,6 +3,7 @@ interface Attributes {
 }
 
 export class Element {
+  selfClosing: boolean = false;
   parent: Element | Document;
   tagName: string;
   innerHTML: Array<string | Element> = [];
@@ -23,6 +24,8 @@ export class Element {
   }
   setAttribute(name: string, data: string) {
     this.attributes[name] = data;
+    // To chain setting
+    return this;
   }
   getAttribute(name: string) {
     return this.attributes[name];
@@ -32,6 +35,11 @@ export class Element {
     if (element instanceof Element) {
       element.parent = this;
     }
+  }
+
+  isSelfClosing() {
+    this.selfClosing = true;
+    return this;
   }
 
   /**
@@ -61,7 +69,7 @@ export class Element {
 export function render(element: Element): string {
   const inner = element.innerHTML;
   let hold = "";
-  if (inner != []) {
+  if (inner != [] || element.selfClosing) {
     inner.forEach((element) => {
       if (typeof element === "string") {
         hold += element;
@@ -73,6 +81,9 @@ export function render(element: Element): string {
   let attribs = "";
   for (const key in element.attributes) {
     attribs += ` ${key}="${element.attributes[key]}"`;
+  }
+  if (element.selfClosing) {
+    return `<${element.tagName}${attribs}/>`;
   }
   return `<${element.tagName}${attribs}>${hold}</${element.tagName}>`;
 }

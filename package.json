@@ -1,11 +1,11 @@
 {
   "name": "@denizat/node_html",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Render HTML in Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "author": "denizat",
-  "license": "GPL-3.0",
+  "license": "APGL-3.0-only",
   "scripts": {
     "build": "tsc",
     "dev": "tsc && node dist/test.js",

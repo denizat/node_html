@@ -1,27 +1,31 @@
-import { Element, render } from "./index";
-const html = new Element("html");
+import { connected } from "process";
+import { Document, Element, render } from "./index";
+
+const d = new Document();
+
+const html = d.HTML;
+
 let div = new Element("div");
-div.setAttribute("className", "red");
-div.setAttribute("id", "root");
-div.appendChild("hello thare");
 html.appendChild(div);
 
-let bigNum = 1000;
+div.setAttribute("className", "red");
+div.setId("root");
+div.appendChild("hello thare");
+let bigNum = 540;
 
-let ul = new Element("ul");
+let ul = new Element("ul", div);
 let li;
 for (let i = 0; i < bigNum; i++) {
-  li = new Element("li");
+  li = new Element("li", ul);
   li.setAttribute("href", `randomlink.com/${i}`);
   li.appendChild(`Check out randomsite.com/${i}`);
   if (i === 534) {
-    let hiddenBoot = new Element("boot");
-    hiddenBoot.setAttribute("id", "boot");
-    li.appendChild(hiddenBoot);
+    let hiddenBoot = new Element("boot", li);
+    hiddenBoot.setId("boot");
   }
-  ul.appendChild(li);
 }
 
-div.appendChild(ul);
+d.getElementById("boot").appendChild("\n\n\nHELLO WORLD \n\n\n");
 
+console.log(d.getElementById("boot"));
 console.log(render(html));

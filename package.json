@@ -1,6 +1,6 @@
 {
   "name": "@denizat/node_html",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Render HTML in Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,8 +9,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc && node dist/test.js > index.html",
-    "prepublish": "tsc && rm dist/test*",
-    "publish": "publish --access public"
+    "prepublish": "tsc && rm dist/test*"
   },
   "private": false,
   "devDependencies": {

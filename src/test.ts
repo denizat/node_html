@@ -1,5 +1,4 @@
 import { Element, render, getElementById } from "./index";
-
 const html = new Element("html");
 let a = new Element("a");
 a.setAttribute("className", "red-box");

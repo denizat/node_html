@@ -1,13 +1,15 @@
 {
-  "name": "node_html",
-  "version": "1.0.0",
+  "name": "@denizat/node_html",
+  "version": "1.0.1",
   "description": "Render HTML in Node.js",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": "denizat",
   "license": "GPL-3.0",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc && node test.js"
+    "dev": "tsc && node dist/test.js",
+    "prepublish": "tsc && rm dist/test*"
   },
   "private": false,
   "devDependencies": {

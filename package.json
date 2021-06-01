@@ -9,7 +9,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc && node dist/test.js",
-    "prepublish": "tsc && rm dist/test*"
+    "prepublish": "tsc && rm dist/test* && rm dist/*.map"
   },
   "private": false,
   "devDependencies": {

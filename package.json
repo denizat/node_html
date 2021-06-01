@@ -7,7 +7,7 @@
   "license": "GPL-3.0",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc && node index.js"
+    "dev": "tsc && node test.js"
   },
   "private": false,
   "devDependencies": {

@@ -1,4 +1,4 @@
-class Element {
+export class Element {
   tagName: string;
   innerHTML: Array<string | Element> = [];
   attributes: any = {};
@@ -16,7 +16,7 @@ class Element {
   }
 }
 
-function render(element: Element): string {
+export function render(element: Element): string {
   const inner = element.innerHTML;
   let hold = "";
   if (inner != []) {
@@ -35,7 +35,7 @@ function render(element: Element): string {
   return `<${element.tagName}${attribs}>${hold}</${element.tagName}>`;
 }
 
-function getElementById(element: any, id: string): Element {
+export function getElementById(element: any, id: string): Element {
   if (element.attributes.id === id) {
     return element;
   } else {
@@ -48,13 +48,3 @@ function getElementById(element: any, id: string): Element {
     return out;
   }
 }
-
-const html = new Element("html");
-let a = new Element("a");
-a.setAttribute("className", "red-box");
-a.setAttribute("href", "telci.org");
-a.setAttribute("id", "telci.org");
-a.appendChild("My personal website");
-html.appendChild(a);
-console.log(render(html));
-console.log(getElementById(html, "telci.org"));

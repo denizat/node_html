@@ -35,16 +35,20 @@ export function render(element: Element): string {
   return `<${element.tagName}${attribs}>${hold}</${element.tagName}>`;
 }
 
-export function getElementById(element: any, id: string): Element {
-  if (element.attributes.id === id) {
-    return element;
-  } else {
-    const inner = element.innerHTML;
-    let out;
-    inner.forEach((newElement: any) => {
-      console.log("here");
-      out = getElementById(newElement, id);
-    });
-    return out;
-  }
-}
+// export function getElementById(element: any, id: string): Element {
+//   if (element.attributes) {
+//     if (element.attributes.id === id) {
+//       console.log(element);
+//       return element;
+//     } else {
+//       for (const key in element.innerHTML) {
+//         getElementById(element.innerHTML[key], id);
+//       }
+//       // const inner = element.innerHTML;
+//       // let out;
+//       // inner.forEach((newElement: any) => {
+//       //   out = getElementById(newElement, id);
+//       // });
+//     }
+//   }
+// }

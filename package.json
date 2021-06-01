@@ -1,6 +1,6 @@
 {
   "name": "@denizat/node_html",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Render HTML in Node.js",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
